@@ -18,7 +18,7 @@ do{
     
     if(numero >=0 && numero <= 3 ){
         if(numero === 1){
-            livro.push(readlinesync.question('\ndigite o nome: '));
+            livro.push(readlinesync.question('\ndigite o nome:**  '));
             console.log()
             livro.printStack();
             console.log("Livro adicionado!\n")
@@ -28,15 +28,18 @@ do{
               livro.printStack();
         
        }else if(numero === 3){
-            console.log(`\nA Pilha atualizada!\nNo momento temos ${livro.count() -1 } Livros:` )
-              livro.pop()
-              livro.printStack();
-
-            
-     }
+            if(livro.isEmpty()){
+                console.log("\nA Pilha está vazia!\n");  
+            }else{
+                livro.pop() 
+                livro.printStack();
+                console.log(`Um livro foi retirado da pilha! Total de Livro na Pilha é: ${livro.count()}`)
+            }
+                
     }else {  
         console.log("\nPor favor, Verifique o número digita: ")
     }
-
+    }
 
 }while(numero != 0)
+    console.log("Programa Finalizado!")

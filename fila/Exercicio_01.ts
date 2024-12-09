@@ -28,10 +28,13 @@ do{
               banco.printQueue();
         
        }else if(numero === 3){
-            console.log(`Fila atualizada, no momento temos ${banco.count() -1 } cliente:` )
-              banco.dequeue()
-              banco.printQueue();
-
+           if(banco.isEmpty()){
+                      console.log("\nA Fila está vazia!\n");  
+            }else{
+                banco.dequeue() 
+                banco.printQueue();
+                console.log(`Total de Clientes na Fila: ${banco.count()}`)
+          }
             
      }
     }else {  
@@ -40,3 +43,4 @@ do{
 
 
 }while(numero != 0)
+    console.log("Programa Finalizado!")
